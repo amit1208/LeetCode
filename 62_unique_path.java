@@ -13,9 +13,7 @@ class Solution {
         int dp[][] =new int[m][n];
         for(int[] row:dp)
         Arrays.fill(row,-1);
-
-       return path(m-1,n-1,dp);
-
-        
+       return path(m-1,n-1,dp);        
     }
 }
+
