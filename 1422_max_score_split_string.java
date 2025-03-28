@@ -23,3 +23,30 @@ class Solution {
     return m;
         }
 }
+
+class Solution {
+    public int maxScore(String s) {
+        int totalOnes = 0, leftZeros = 0, maxScore = Integer.MIN_VALUE;
+        
+        // Count total number of '1's in the string
+        for (char c : s.toCharArray()) {
+            if (c == '1') {
+                totalOnes++;
+            }
+        }
+
+        // Iterate through the string and calculate score dynamically
+        for (int i = 0; i < s.length() - 1; i++) {  // Stop at s.length()-1 to ensure non-empty right part
+            if (s.charAt(i) == '0') {
+                leftZeros++;
+            } else {
+                totalOnes--;  // Reduce right-side '1's count
+            }
+            
+            // Score = left '0's + right '1's
+            maxScore = Math.max(maxScore, leftZeros + totalOnes);
+        }
+        
+        return maxScore;
+    }
+}
