@@ -24,3 +24,30 @@ class Solution {
         return sum+Math.max(left[0],right[0]);
     }
 }
+
+
+// class Solution {
+//     public int candy(int[] ratings) {
+//         int n = ratings.length;
+//         if (n <= 1) return n;
+
+//         int candies = 1;
+//         int inc = 1, dec = 0, prev = 1;
+
+//         for (int i = 1; i < n; i++) {
+//             if (ratings[i] >= ratings[i - 1]) {
+//                 dec = 0;
+//                 prev = (ratings[i] == ratings[i - 1]) ? 1 : prev + 1;
+//                 candies += prev;
+//                 inc = prev;
+//             } else {
+//                 dec++;
+//                 if (dec == inc) dec++; // peak conflict
+//                 candies += dec;
+//                 prev = 1;
+//             }
+//         }
+
+//         return candies;
+//     }
+// }
