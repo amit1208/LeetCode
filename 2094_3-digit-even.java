@@ -18,7 +18,7 @@ class Solution {
             count[a]--; count[b]--; count[c]--;
             if (count[a] >= 0 && count[b] >= 0 && count[c] >= 0) {
                 resultSet.add(i);
-            }
+            }   
             // restore counts
             count[a]++; count[b]++; count[c]++;
         }
