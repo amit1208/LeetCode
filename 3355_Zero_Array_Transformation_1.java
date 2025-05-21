@@ -14,6 +14,7 @@ public boolean isZeroArray(int[] nums, int[][] queries) {
     for (int i = 1; i < n; i++) {
         count[i] += count[i - 1];
     }
+    
 
     // Now check: is nums[i] <= count[i]?
     for (int i = 0; i < n; i++) {
